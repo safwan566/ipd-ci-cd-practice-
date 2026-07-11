@@ -25,7 +25,7 @@ export default function LoginPage() {
         {/* Login Card */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="bg-gradient-to-r from-secondary to-green-600 px-6 py-8">
-            <h2 className="text-2xl font-bold text-white text-center">Welcome Back after complete the ci/cd</h2>/h2>
+            <h2 className="text-2xl font-bold text-white text-center">Welcome Back after complete the ci/cd</h2>
             <p className="text-green-100 text-center text-sm mt-2">Sign in to your account to continue</p>
           </div>
 
@@ -36,7 +36,7 @@ export default function LoginPage() {
           {/* Footer Section */}
           <div className="bg-green-50 px-6 py-4 border-t border-green-200">
             <p className="text-center text-gray-700 text-sm">
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <Link href="/auth/register" className="font-semibold text-secondary hover:text-green-700 transition-colors">
                 Create one now
               </Link>

@@ -310,7 +310,7 @@ export default function ProfilePage() {
                     type="text"
                     name={field}
                     placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                    value={(formData.address as any)[field]}
+                    value={(formData.address as Record<string, string>)[field]}
                     onChange={handleAddressChange}
                     disabled={!isEditing}
                     className={`px-4 py-3 rounded-lg border ${isEditing ? 'border-gray-300 bg-white' : 'border-gray-200 bg-gray-50 text-gray-600 cursor-not-allowed'}`}
@@ -328,7 +328,7 @@ export default function ProfilePage() {
                     type="text"
                     name={field}
                     placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                    value={(formData.emergencyContact as any)[field]}
+                    value={(formData.emergencyContact as Record<string, string>)[field]}
                     onChange={handleEmergencyChange}
                     disabled={!isEditing}
                     className={`px-4 py-3 rounded-lg border ${isEditing ? 'border-gray-300 bg-white' : 'border-gray-200 bg-gray-50 text-gray-600 cursor-not-allowed'}`}

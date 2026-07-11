@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, ReactNode, useCallback, useEffect } from 'react';
-import { User, LoginInput, RegisterInput, OtpInput, ForgotPasswordInput, Profile, ProfileUpdateInput, TwoFactorSettings } from '@/types/user';
+import { User, LoginInput, RegisterInput, OtpInput, ForgotPasswordInput, Profile, ProfileUpdateInput, ProfileAddress, EmergencyContact, TwoFactorSettings } from '@/types/user';
 import { useRouter } from 'next/navigation';
 
 interface UserContextType {
@@ -300,7 +300,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
 
         // Validate address object - must have all required fields
         if (key === 'address' && value !== null) {
-          const addr = value as any;
+          const addr = value as ProfileAddress;
           if (!addr.street || !addr.city || !addr.state || !addr.country || !addr.zipCode) {
             console.warn('Incomplete address object, skipping');
             return acc;
@@ -309,7 +309,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
 
         // Validate emergencyContact object - must have all required fields
         if (key === 'emergencyContact' && value !== null) {
-          const contact = value as any;
+          const contact = value as EmergencyContact;
           if (!contact.name || !contact.phoneNumber || !contact.relationship) {
             console.warn('Incomplete emergencyContact object (missing relationship?), skipping');
             return acc;
@@ -318,7 +318,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
 
         acc[key] = value;
         return acc;
-      }, {} as Record<string, any>);
+      }, {} as Record<string, unknown>);
 
       console.log('Sending profile update:', cleanedData);
 
