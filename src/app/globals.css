@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply transition-colors duration-200;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  font-family: 'Inter', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-bg {
+  background: linear-gradient(160deg, rgba(231, 255, 202, 1) 35%, rgba(163, 208, 188, 0.58) 50%, rgba(74, 163, 136, 0.7) 100%);
+  background-attachment: fixed;
+  @apply text-gray-900 dark:text-white;
+  margin: 10px;
+  border-radius: 24px;
+  height: calc(100vh - 20px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  position: relative;
+
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary {
+  @apply btn bg-primary text-white hover:opacity-90;
+}
+
+.btn-secondary {
+  @apply btn bg-secondary text-white hover:opacity-90;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6;
+}

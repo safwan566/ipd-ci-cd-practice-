@@ -1,0 +1,133 @@
+.sidebar {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.navContainer {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-left: 16px; /* Space for the "cut out" look */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.navContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.sectionTitle {
+  padding-left: 16px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8a9a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.linkWrapper {
+  position: relative;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: #4a554a;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+  border-radius:10px 0 0 10px;
+  overflow: hidden;
+}
+
+.navLink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.navLink:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-right: 16px;
+  border-radius: 12px;
+}
+
+/* THE ACTIVE STATE */
+.active {
+  color: #1b5e20; /* Dark green text */
+  font-weight: 600;
+}
+
+.active::before {
+  transform: translateX(0);
+}
+
+/* Top Inverted Curve */
+.topCurve {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-bottom-right-radius: 20px;
+  box-shadow: 10px 10px 0 10px #ffffff;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bottom Inverted Curve */
+.bottomCurve {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 10px -10px 0 10px #ffffff;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes slideInCurve {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  color: #4a554a;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
