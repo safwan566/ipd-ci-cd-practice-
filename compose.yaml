@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     environment:
-      NODE_ENV: production
+      - NODE_ENV=production
+      - PORT=${PORT}
     ports:
-      - 9000:9000
+      - "${PORT}:${PORT}"
