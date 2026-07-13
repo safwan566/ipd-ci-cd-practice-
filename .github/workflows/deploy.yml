@@ -59,5 +59,7 @@ jobs:
             cd ${{ secrets.VPS_APP_PATH }}
             git fetch --all
             git reset --hard origin/main
+            echo "PORT=9000" > .env
+            echo "NODE_ENV=production" >> .env
             docker compose up -d --build
             docker image prune -f
